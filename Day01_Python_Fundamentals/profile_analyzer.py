@@ -90,3 +90,8 @@ if (current_month > birth_month) or (current_month == birth_month and current_da
 else:
     birth_year = current_year - student_age - 1
 print("You were born in {}.".format(birth_year))
+
+# ===========================================
+# Final message
+# ===========================================
+print("\nThank you for using the Profile Analyzer, {}!".format(student_name))
