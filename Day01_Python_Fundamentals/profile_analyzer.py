@@ -11,6 +11,7 @@ Author: Fajar Naeem Rana
 # ===========================================
 student_name = input("Enter your name: ")
 student_age = int(input("Enter your age: "))
+birth_date = input("Enter your birth date (DD-MMS): ")
 university_name = input("Enter your university name: ")
 department_name = input("Enter your department name: ")
 email_address = input("Enter your email address: ")
@@ -23,6 +24,7 @@ cgpa = float(input("Enter your CGPA: "))
 print("\nProfile Information:")
 print(f"Name: {student_name}")
 print(f"Age: {student_age}")
+print("Birth month:", birth_date.split('-')[1])
 print(f"University: {university_name}")
 print(f"Department: {department_name}")
 print(f"Email: {email_address}")
@@ -63,3 +65,28 @@ elif cgpa >= 3.0:
     print("Good! You have a decent CGPA.")
 else:
     print("You need to work harder to improve your CGPA.")
+
+# ===========================================
+# Bonus: Greeting based on the time of day and calculating the users birth year based on their age
+# ===========================================
+from datetime import datetime
+
+current_time = datetime.now().hour
+if 5 <= current_time < 12:
+    print("Good morning, {}!".format(student_name))
+elif 12 <= current_time < 18:
+    print("Good afternoon, {}!".format(student_name))
+else:
+    print("Good evening, {}!".format(student_name))
+
+# checking if the birthday has passed this year or not and then calculating the birth year based on the age
+birth_month = int(birth_date.split('-')[1])
+birth_date = int(birth_date.split('-')[0])
+current_year = datetime.now().year
+current_month = datetime.now().month
+current_day = datetime.now().day
+if (current_month > birth_month) or (current_month == birth_month and current_day >= birth_date):
+    birth_year = current_year - student_age
+else:
+    birth_year = current_year - student_age - 1
+print("You were born in {}.".format(birth_year))
