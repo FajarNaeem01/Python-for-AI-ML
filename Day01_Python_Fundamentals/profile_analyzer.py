@@ -28,3 +28,17 @@ print(f"Department: {department_name}")
 print(f"Email: {email_address}")
 print(f"Programming Languages: {', '.join(programming_languages)}")
 print(f"CGPA: {cgpa}")
+
+# ===========================================
+# Analyzing the user's profile information  
+# ===========================================
+print("\nProfile Analysis:")
+print("Name Length:", len(student_name))
+print("Name in Uppercase:", student_name.upper())
+print("Title Case Name:", student_name.title())
+print("Email Domain:", email_address.split('@')[-1])
+print("First character of Name:", student_name[0])
+print("Last character of Name:", student_name[-1])
+print("Initials:", ''.join([name[0].upper() for name in student_name.split()]))
+print("Reversed Name:", student_name[::-1])
+
