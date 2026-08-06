@@ -42,3 +42,24 @@ print("Last character of Name:", student_name[-1])
 print("Initials:", ''.join([name[0].upper() for name in student_name.split()]))
 print("Reversed Name:", student_name[::-1])
 
+# ===========================================
+# Age and CGPA Analysis
+# ===========================================
+if student_age < 18:
+    print("You are a minor.")
+elif 18 <= student_age < 25:
+    print("You are a young adult.")
+else:
+    print("You are an adult.")
+if student_age <= 30:
+    print("How many years until you turn 30:", 30 - student_age)
+# ===========================================
+print("Current CGPA out of 4:", cgpa)
+print("CGPA Percentage:", (cgpa / 4) * 100, "%")
+print("How's your CGPA?")
+if cgpa >= 3.5:
+    print("Excellent! You have a high CGPA.")
+elif cgpa >= 3.0:
+    print("Good! You have a decent CGPA.")
+else:
+    print("You need to work harder to improve your CGPA.")
