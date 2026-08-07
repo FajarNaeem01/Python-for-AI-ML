@@ -158,4 +158,30 @@ for student_id, info in students.items():
 print(f"Total Students: {len(students)}")
 average_cgpa = sum(student["cgpa"] for student in students.values()) / len(students)
 print(f"Average CGPA: {average_cgpa:.2f}")
-# ==================================================================================
+
+# ===============================================
+#  5. Nested Collections, comprehensions and zip
+# ===============================================
+students_data = [
+    {"name": "Fajar", "age": 20, "cgpa": 2.9},
+    {"name": "Ahmed", "age": 21, "cgpa": 3.4},
+    {"name": "Sara", "age": 20, "cgpa": 3.7},
+    {"name": "Ali", "age": 22, "cgpa": 2.8}
+]
+for student in students_data:
+    print(f"{student['name']}, {student['cgpa']}")
+names = [student["name"] for student in students_data]
+top_students = [student for student in students_data if student["cgpa"] > 3.0]
+print(f"Names of Students: {names}")
+print("Top Students:")
+
+# dictionary of mapping number with their cubes
+cubes= {x: x**3 for x in range(1, 6)}
+
+# using zip to combine lists into a dictionary
+names = ["Fajar", "Ahmed", "Sara"]
+ages = [20, 21, 20]
+cgpas = [2.9, 3.4, 3.7]
+student_info = dict(zip(names, zip(ages, cgpas)))
+print(f"Student Info: {student_info}")
+
