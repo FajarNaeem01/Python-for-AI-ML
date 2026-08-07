@@ -50,4 +50,22 @@ print(f"Sorted List in Descending Order: {numbers}")
 print(f"Minimum Value: {min(numbers)}")
 print(f"Maximum Value: {max(numbers)}")
 print(f"Sum of Values: {sum(numbers)}")
+
 # ===========================================
+# 2. TUPLES
+# ===========================================   
+student = (
+    "Fajar Naeem Rana",
+    20,
+    "Computer Science",
+    2.9
+)
+#unpacking tuple
+name, age, major, cgpa = student
+print("Student Information:")
+print(f"Name: {name}")
+print(f"Age: {age}")
+print(f"Major: {major}")
+print(f"CGPA: {cgpa}")
+# immutable nature of tuples
+# student[0] = "John Doe"  # This will raise an error
