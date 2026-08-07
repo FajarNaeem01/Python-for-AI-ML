@@ -107,3 +107,55 @@ elif name in python_students.union(ml_students):
     print(f"Hello {name}, you are enrolled in both courses.")
 else:
     print(f"Hello {name}, you are not enrolled in either course.")
+
+#===========================================
+# 4. DICTIONARIES   
+#===========================================
+student = {
+    "name": "Fajar",
+    "age": 20,
+    "department": "Computer Science",
+    "cgpa": 2.9
+}
+student["cgpa"] = 3.4
+student["university"] = "Quaid-i-Azam University"
+student["semester"] = 5
+print("Student Information:")
+for key, value in student.items():
+    print(f"{key}: {value}")    
+student.get("phone", "Not Available")
+
+#nested dictionary
+students = {
+    "student1": {
+        "name": "Fajar",
+        "cgpa": 2.9
+    },
+    "student2": {
+        "name": "Ahmed",
+        "cgpa": 3.4
+    },
+    "student3": {
+        "name": "Sara",
+        "cgpa": 3.7
+    }
+}
+student_id=input("Enter student ID (student1, student2, student3): ")
+if student_id in students:
+    print(f"Name: {students[student_id]['name']}")
+    print(f"CGPA: {students[student_id]['cgpa']}")
+else:
+    print("Student not found.") 
+
+# ===========================================
+print("Student Database:")
+print("=================")
+for student_id, info in students.items():
+    print(f"ID: {student_id}")
+    print(f"Name: {info['name']}")
+    print(f"CGPA: {info['cgpa']}")
+    print("-----------------")
+print(f"Total Students: {len(students)}")
+average_cgpa = sum(student["cgpa"] for student in students.values()) / len(students)
+print(f"Average CGPA: {average_cgpa:.2f}")
+# ==================================================================================
