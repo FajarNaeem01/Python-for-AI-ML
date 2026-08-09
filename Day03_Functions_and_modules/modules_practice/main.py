@@ -25,7 +25,7 @@ print("8. Generate Report")
 print("9. Add two numbers")
 print("10.Subtract two numbers")
 
-operation=int(input("Select an operation (1-8): "))
+operation=int(input("Select an operation (1-10): "))
 if operation==1:
     std.display_students(students)
 elif operation==2:
