@@ -1,0 +1,4 @@
+Name: Fajar
+University: QAU
+Major: Computer Science
+Goal: AI/ML Engineer
