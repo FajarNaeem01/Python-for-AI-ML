@@ -37,18 +37,24 @@ try:
         student_data=file.read()
 
 except FileNotFoundError as fileError:
-    print("Something went wrong: ", {fileError})
+    print("Something went wrong: ", fileError)
 
 else:
     print(student_data)
 
 # Student CGPA Validator- Raising your own exceptions
 # =================================
-cgpa=float(input("enter your gpa: "))
+try:
+    cgpa=float(input("enter your gpa: "))
+    if cgpa < 0:
+         raise ValueError("CGPA cannot be negative")
+    elif cgpa > 4:
+        raise ValueError("CGPA can be from 0-4")
+    else:
+        print(f"Your cgpa is {cgpa}")
 
-if cgpa < 0:
-    raise ValueError("CGPA cannot be negative")
-elif cgpa > 4:
-    raise ValueError("CGPA can be from 0-4")
-else:
-    print(f"Your cgpa is {cgpa}")
+except ValueError as error:
+    print("Error found: ", error)
+
+finally:
+    print("CGPA Validation Completed")
