@@ -12,15 +12,21 @@ Author: Fajar Naeem Rana
 #==============================================
 #            BankAccount Class 
 #==============================================
+#==============================================
+#            BankAccount Class 
+#==============================================
 class BankAccount:
     bank_name = "HBL "
     def __init__(self,account_holder, account_number, balance):
         self.account_holder = account_holder   # attribute initilization
+        self.account_holder = account_holder   # attribute initilization
         self.account_number = account_number
+        self.__balance = balance               # private access
         self.__balance = balance               # private access
 
     def display_account(self):
         print("\n=========== Account Summary ============")
+        print(f"Bank Name: {BankAccount.bank_name}")   # accessing class attribute
         print(f"Bank Name: {BankAccount.bank_name}")   # accessing class attribute
         print(f"Account Holder: {self.account_holder}")
         print(f"Account Number: {self.account_number}")
@@ -60,18 +66,23 @@ class BankAccount:
 
 # =============================================
 # ============= Creating objects ==============
+# =============================================
+# ============= Creating objects ==============
 account1 = BankAccount("Fajar", "PK001", 5000)
 account2 = BankAccount("Noor", "PK002", 10000)
 
+print("Accounts detail before any operation:")
 print("Accounts detail before any operation:")
 account1.display_account()
 account2.display_account()
 
 # ============== Deposit ===============
+# ============== Deposit ===============
 amount= account1.deposit(4000)
 print(f"\n{amount} Deposited!")
 print(f"Current Balance: {account1.current_balance()}")
 
+# ============= Transfer ================
 # ============= Transfer ================
 amount= account1.transfer(account2, 3000)
 print(f"{amount} transferred to {account2.account_holder}")
@@ -81,7 +92,15 @@ amount = float(input("Enter amount to withdraw: "))
 is_withdrawn, amount_withdrawn = account1.withdraw(amount)
 if is_withdrawn:
     print(f"{amount_withdrawn} is withdrawn")
+# ============= withdrawal ===============
+amount = float(input("Enter amount to withdraw: "))
+is_withdrawn, amount_withdrawn = account1.withdraw(amount)
+if is_withdrawn:
+    print(f"{amount_withdrawn} is withdrawn")
 else:
+    print("Invalid! Withdrawal Rejected")
+
+# ====== changing class atrribute ========
     print("Invalid! Withdrawal Rejected")
 
 # ====== changing class atrribute ========
