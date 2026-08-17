@@ -31,6 +31,7 @@ class BankAccount:
     def deposit(self, amount):
         if amount <=0:
             print("Invalid! Deposit Rejected")
+            return amount
         self.__balance += amount     # changing object's state
         return amount
 
@@ -54,6 +55,7 @@ class BankAccount:
     def transfer(self, other_account, amount):
         if amount > self.__balance or amount <= 0:
             print("Invalid! Transfer Rejected.")
+            return amount
         self.__balance -= amount
         other_account.deposit(amount)
         return amount
